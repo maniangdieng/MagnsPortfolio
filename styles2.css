@@ -1,0 +1,401 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+   
+    background-color: #131212;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Particules en arrière-plan */
+#particles-js {
+    position: fixed;
+    width: 80%;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Les particules restent derrière le contenu */
+}
+
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    right: 0; /* Positionne la barre de navigation sur le côté droit */
+    width: auto; /* Ajuste la largeur si nécessaire */
+    background-color: rgba(255, 239, 178, 0.6);
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none; /* Cacher la navbar fixe au départ */
+    padding: 20px 40px;
+}
+
+
+/* Contenu au-dessus des particules */
+header.main-header {
+    position: relative;
+    z-index: 10; /* Le header reste au-dessus des particules */
+    display: flex;
+    justify-content: space-between; /* Place le logo à gauche et la navigation à droite */
+    align-items: center; /* Aligne verticalement le logo et la navigation */
+    padding: 20px;
+    color: #fff;
+    margin-left: 40px;
+    margin-right: 40px;
+     
+}
+
+/* Style pour le logo */
+.logo {
+    position: relative;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 239, 178, 0.6),  /* Beige pâle pour l'effet fluorescent */
+                0 0 40px rgba(255, 239, 178, 0.4), 
+                0 0 60px rgba(255, 239, 178, 0.2);
+}
+
+/* Ajout d'un effet d'animation pour un effet encore plus dynamique */
+@keyframes neon {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 239, 178, 0.6), 
+                    0 0 40px rgba(255, 239, 178, 0.4), 
+                    0 0 60px rgba(255, 239, 178, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 239, 178, 1), 
+                    0 0 60px rgba(255, 239, 178, 0.8), 
+                    0 0 90px rgba(255, 239, 178, 0.6);
+    }
+}
+
+
+
+
+/* Style pour les liens avec effet fluorescent au survol */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Afficher les éléments de la liste en ligne */
+    align-items: center; /* Aligner verticalement les éléments de la liste */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    display: inline-block; /* Assure que le padding et l'ombre sont appliqués correctement */
+    padding: 5px; /* Ajout de padding pour l'effet au survol */
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 239, 178, 0.5); /* Couleur beige pâle de l'effet fluorescent */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0; /* Masquer l'effet par défaut */
+    transition: opacity 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    opacity: 1; /* Afficher l'effet fluorescent au survol */
+    box-shadow: 0 0 15px rgba(255, 239, 178, 0.7), 
+                0 0 30px rgba(255, 239, 178, 0.5);
+    transform: translate(-50%, -50%) scale(1.1); /* Agrandir l'effet au survol */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+/* Effets d'animation pour la photo */
+.photo {
+    margin-left: 100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 239, 178, 1);
+    box-shadow: 0 0 15px rgba(255, 239, 178, 0.8), 0 0 30px rgba(255, 239, 178, 0.6);
+    opacity: 0;
+    transform: translateY(50%); /* La photo commence en bas */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Transition pour l'effet de glissement */
+}
+
+.photo.show {
+    opacity: 1;
+    transform: translateY(0); /* La photo revient à sa position normale */
+}
+
+/* Effets d'animation pour le texte */
+.text-content {
+    opacity: 0;
+    transform: translateX(100%); /* Le texte commence hors de l'écran à droite */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Transition pour l'effet de glissement */
+}
+
+.text-content.show {
+    opacity: 1;
+    transform: translateX(0); /* Le texte revient à sa position normale */
+}
+
+
+.presentation {
+    width: auto;
+    display: flex;
+    color: white;
+    padding: 20px;
+    
+    background-color: rgb(39, 38, 38);
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 20px;
+    z-index: -1000;
+    border: 2px solid rgba(255, 239, 178, 1);
+    box-shadow: 0 0 15px rgba(255, 239, 178, 0.8), /* Effet fluorescent autour de l'image */
+    0 0 30px rgba(255, 239, 178, 0.6); /* Plus de luminosité */
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.text-content  {
+    margin-left: 30px;
+    padding: 5px 0;
+}
+
+
+
+p{
+    font-family: Arial, sans-serif; /* Police de caractères claire et facile à lire */
+    font-size: 20px; /* Taille de police confortable pour la lecture */
+    line-height: 1.6; /* Hauteur de ligne pour un meilleur espacement entre les lignes */
+   /* Couleur de texte sombre pour un bon contraste avec le fond */
+    margin: 0 0 1em 0; /* Espace en bas pour éviter que les paragraphes ne soient trop collés */
+    padding: 0; /* Pas de padding pour éviter des espaces non désirés */
+    text-align: center;
+}
+.skills-container { 
+    margin-left: auto; /* Aligne le conteneur à gauche */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Assure l'alignement du contenu à gauche */
+    float: left;
+}
+
+.skills-container hr {
+    border-radius: 10px;
+    border: none;
+    height: 4px;
+    background-color: rgba(255, 239, 178, 1);
+    width: 80px;
+    margin-right: 10px; /* Espace entre la ligne et le texte */
+}
+
+.skills-container span {
+    font-size: 18px;
+    color: white; /* Couleur du texte */
+    font-weight: bold;
+}
+
+/* Section Compétences */
+.skills {
+    text-align: center;
+    margin: 0 auto;
+    padding: 50px 0;
+   
+}
+
+.skills h2 {
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto; /* Centre la grille horizontalement */
+    text-align: center;
+    align-items: center;
+    justify-content: center; /* Assure que les items dans la grille sont centrés */
+}
+
+.skill-item {
+    border: 2px solid rgba(255, 239, 178, 1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    display: block;
+    color: #c9d1d9;
+    font-size: 16px;
+}
+
+.cv{
+    
+    gap: 20px;
+    width: 60%;
+    margin: 0 auto; /* Centre la grille horizontalement */
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    background-color: black;
+    border-radius: 20px;
+    height: 200px;
+}
+/* From Uiverse.io by alexroumi */ 
+button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   button:hover {
+    color: #e8e8e8;
+   }
+   
+   button:hover::before {
+    width: 100%;
+   }
+   p {
+    font-family: Arial, sans-serif; /* Police de caractères claire et facile à lire */
+    font-size: 20px; /* Taille de police confortable pour la lecture */
+    line-height: 1.6; /* Hauteur de ligne pour un meilleur espacement entre les lignes */
+    color: white; /* Couleur de texte sombre pour un bon contraste avec le fond */
+    margin: 0 0 1em 0; /* Espace en bas pour éviter que les paragraphes ne soient trop collés */
+    padding: 0; /* Pas de padding pour éviter des espaces non désirés */
+}
+
+@media (max-width: 768px) {
+    /* Ajustement de la barre de navigation */
+    .main-header {
+        
+        align-items: center;
+        padding: 10px;
+    }
+
+    .main-header .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .main-header nav ul {
+        
+        margin: 0;
+    }
+
+    .main-header nav ul li {
+        margin: 10px 0;
+    }
+
+    .fixed-navbar {
+        padding: 10px 20px;
+    }
+
+    /* Ajustement de la section présentation */
+    .presentation {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 10px;
+    }
+
+    .presentation img {
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .text-content {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .skills-container {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Ajustement de la grille des compétences */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .skill-item {
+        text-align: center;
+    }
+
+    /* Ajustement de la section CV */
+    .cv {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cv button {
+        width: 100%;
+    }
+}
