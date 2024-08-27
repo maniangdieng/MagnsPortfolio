@@ -12,10 +12,10 @@ body, html {
 #particles-js {
     position: fixed;
     width: 80%;
-    height: auto;
+    height: 100%;
     top: 0;
     left: 0;
-    z-index: 10; /* Les particules restent derrière le contenu */
+    z-index: 0; /* Les particules restent derrière le contenu */
 }
 
 .fixed-navbar {
@@ -274,8 +274,9 @@ p{
     text-align: center;
     align-items: center;
     justify-content: center; 
-    background-color: black;
+    border: 2px solid rgba(255, 239, 178, 1);
     border-radius: 20px;
+    background-color: rgba(255, 239, 178, 1);
     height: 200px;
 }
 /* From Uiverse.io by alexroumi */ 
@@ -326,32 +327,82 @@ button {
     padding: 0; /* Pas de padding pour éviter des espaces non désirés */
 }
 
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    position: relative; /* ou "absolute" selon vos besoins */
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    height: 208px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.social-link {
+    color: white;
+    font-size: 64px;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+.social-link1 {
+    color: white;
+    font-size: 20spx;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+
+
+
 @media (max-width: 768px) {
     /* Ajustement de la barre de navigation */
-    .main-header {
-        
-        align-items: center;
-        padding: 10px;
-    }
-
-    .main-header .logo img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .main-header nav ul {
-        
-        margin: 0;
-    }
-
-    .main-header nav ul li {
-        margin: 10px 0;
-    }
+    header.main-header {
+        /* Empile le logo et les liens de navigation */
+         text-align: center;
+         margin-left: 20px;
+         margin-right: 20px;
+         padding: 10px;
+     }
+ 
+     nav ul {
+         /* Les liens de navigation se placent verticalement */
+         align-items: center; /* Centrer les liens de navigation */
+         padding: 0;
+     }
+ 
+     nav ul li {
+         margin: 8px 0; /* Espacement entre les liens de navigation */
+     }
 
     .fixed-navbar {
         padding: 10px 20px;
+        width: 63%;
+        height: 40px;
     }
-
+/* Réduction de la taille du logo */
+.logo img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
     /* Ajustement de la section présentation */
     .presentation {
         flex-direction: column;
@@ -398,4 +449,30 @@ button {
     .cv button {
         width: 100%;
     }
+    footer{
+        height: auto;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center; /* center text for better alignment */
+    }
+
+    .social-link {
+        font-size: 48px; /* reduce size for smaller screens */
+    }
+
+    .social-link1 {
+        font-size: 18px; /* reduce size for smaller screens */
+    }
+}
+
+.pcv{
+    
+    color: black;
+    font-family: Arial, sans-serif; /* Police de caractères claire et facile à lire */
+    font-size: 20px; /* Taille de police confortable pour la lecture */
+    line-height: 1.6; /* Hauteur de ligne pour un meilleur espacement entre les lignes */
+    
+    margin: 0 0 1em 0; /* Espace en bas pour éviter que les paragraphes ne soient trop collés */
+    padding: 0; 
 }

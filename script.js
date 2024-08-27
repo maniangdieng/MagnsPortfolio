@@ -69,35 +69,48 @@ particlesJS('particles-js', {
 document.addEventListener("DOMContentLoaded", function () {
     const fixedNavbar = document.querySelector(".fixed-navbar");
     const mainHeader = document.querySelector(".main-header");
+    let isScrolling;
 
     window.addEventListener("scroll", function () {
-        // Si le défilement dépasse la hauteur du header principal, afficher la navbar fixe
-        if (window.scrollY > mainHeader.offsetHeight) {
-            fixedNavbar.style.display = "flex";
-        } else {
-            fixedNavbar.style.display = "none";
-        }
+        // Cacher la barre de navigation fixe pendant le défilement
+        fixedNavbar.style.display = "none";
+
+        // Effacer le précédent timeout si un nouveau défilement commence
+        clearTimeout(isScrolling);
+
+        // Définir un délai pour détecter quand l'utilisateur arrête de défiler
+        isScrolling = setTimeout(function () {
+            // Vérifier si le header principal est hors de la vue
+            if (window.scrollY > mainHeader.offsetHeight) {
+                // Afficher la barre de navigation fixe après avoir arrêté de défiler
+                fixedNavbar.style.display = "flex";
+            }
+        }, 350); // Délai avant de réafficher la navbar (en millisecondes)
     });
 });
+
 document.addEventListener("DOMContentLoaded", function() {
-    const textElements = document.querySelectorAll('.text-content h5, .text-content h1, .text-content h4');
+    const textElements = document.querySelectorAll(' .text-content h1, .text-content h5');
 
     textElements.forEach((element) => {
         const text = element.textContent;
-        element.textContent = ''; 
-        let index = 0;
 
-        function typeWriter() {
-            if (index < text.length) {
-                element.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, 50); 
+        function typeWriter(index = 0, isDeleting = false) {
+            if (!isDeleting && index < text.length) {
+                element.textContent = text.substring(0, index + 1);
+                setTimeout(() => typeWriter(index + 1), 80);
+            } else if (isDeleting && index > 0) {
+                element.textContent = text.substring(0, index - 1);
+                setTimeout(() => typeWriter(index - 1, true), 50);
+            } else {
+                setTimeout(() => typeWriter(0, !isDeleting), 1000); // Pause entre la fin d'une boucle et le début de la suivante
             }
         }
 
         typeWriter();
     });
 });
+
 document.addEventListener("DOMContentLoaded", function() {
     const photo = document.querySelector('.photo');
     photo.classList.add('show');
@@ -110,3 +123,53 @@ document.addEventListener("DOMContentLoaded", function() {
     photo.classList.add('show');
     textContent.classList.add('show');
 });
+
+document.getElementById('continueButton').addEventListener('click', function() {
+    window.location.href = 'about.html';
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const viewMoreButtons = document.querySelectorAll('.view-more-btn');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    viewMoreButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const modalId = this.getAttribute('data-modal-target');
+            const modal = document.querySelector(modalId);
+            if (modal) {
+                modal.style.display = 'flex'; // Afficher la modale
+            }
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const modal = this.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none'; // Masquer la modale
+            }
+        });
+    });
+
+    // Fermer la modale si on clique en dehors de la zone de contenu
+    window.addEventListener('click', function (event) {
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});
+
+
+
+  function openForm() {
+    var iframe = document.getElementById("formIframe");
+    iframe.src = "form.html";
+    iframe.style.display = "block"; // Affiche l'iframe lorsque le bouton est cliqué
+  }
+

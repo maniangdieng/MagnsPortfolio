@@ -1,0 +1,590 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+   
+    background-color: #1d1d1d;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Particules en arrière-plan */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Les particules restent derrière le contenu */
+}
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    right: 0; /* Positionne la barre de navigation sur le côté droit */
+    width: auto; /* Ajuste la largeur si nécessaire */
+    background-color: rgba(255, 239, 178, 0.6);
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none; /* Cacher la navbar fixe au départ */
+    padding: 20px 40px;
+}
+
+
+/* Contenu au-dessus des particules */
+header.main-header {
+    position: relative;
+    z-index: 10; /* Le header reste au-dessus des particules */
+    display: flex;
+    justify-content: space-between; /* Place le logo à gauche et la navigation à droite */
+    align-items: center; /* Aligne verticalement le logo et la navigation */
+    padding: 20px;
+    color: #fff;
+    margin-left: 40px;
+    margin-right: 40px;
+     
+}
+
+/* Style pour le logo */
+.logo {
+    position: relative;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 239, 178, 0.6),  /* Beige pâle pour l'effet fluorescent */
+                0 0 40px rgba(255, 239, 178, 0.4), 
+                0 0 60px rgba(255, 239, 178, 0.2);
+}
+
+
+.logo img {
+    animation: neon 2s infinite alternate;
+}
+
+
+/* Style pour les liens avec effet fluorescent au survol */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Afficher les éléments de la liste en ligne */
+    align-items: center; /* Aligner verticalement les éléments de la liste */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    display: inline-block; /* Assure que le padding et l'ombre sont appliqués correctement */
+    padding: 5px; /* Ajout de padding pour l'effet au survol */
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 239, 178, 0.5); /* Couleur beige pâle de l'effet fluorescent */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0; /* Masquer l'effet par défaut */
+    transition: opacity 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    opacity: 1; /* Afficher l'effet fluorescent au survol */
+    box-shadow: 0 0 15px rgba(255, 239, 178, 0.7), 
+                0 0 30px rgba(255, 239, 178, 0.5);
+    transform: translate(-50%, -50%) scale(1.1); /* Agrandir l'effet au survol */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.photo {
+    margin-left: 100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 239, 178, 1);
+    box-shadow: 0 0 15px rgba(255, 239, 178, 0.8), 0 0 30px rgba(255, 239, 178, 0.6);
+    opacity: 0;
+    transform: translateX(100%); /* La photo commence hors de l'écran, à droite */
+    transition: opacity 2.5s ease, transform 2.0s ease; /* Transition pour l'effet de glissement */
+}
+
+.photo.show {
+    opacity: 1;
+    transform: translateX(0); /* La photo revient à sa position normale */
+}
+
+.presentation {
+    display: flex; /* Utilisation de Flexbox pour aligner les éléments en ligne */
+    align-items: center; /* Aligner verticalement les éléments */
+    justify-content: center; /* Centrer horizontalement les éléments */
+    flex-direction: row; /* Aligner les éléments en ligne (horizontalement) */
+   
+    text-align: center;
+    color: #fff; /* Couleur du texte pour le contraste */
+    padding: 20px; /* Ajouter un peu de padding autour du contenu */
+}
+
+
+.text-content h5, .text-content h1, .text-content h3 {
+    margin: 10px 0; /* Ajouter de l'espace entre les titres */
+}
+h5{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255, 239, 178, 1) ;
+    font-size: 20px;
+}
+h1{
+    font-family: Copperplate Gothic Light;
+   
+    font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    position: relative; /* ou "absolute" selon vos besoins */
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    height: 208px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.social-link {
+    color: white;
+    font-size: 64px;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+.social-link1 {
+    color: white;
+    font-size: 20spx;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.skill-image {
+    width: 100%;
+    height: 100%; /* Ajuste la hauteur de la section image */
+    overflow: hidden;
+}
+
+.skill-image img {
+    object-fit: contain;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid rgba(255, 239, 178, 1);
+}
+
+/* From Uiverse.io by gharsh11032000 */ 
+.card2 {
+    position: relative;
+    width: 500px;
+    height: 483px;
+    background-color:  rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 12px;
+    gap: 12px;
+    border-top-left-radius: 32px; /* Bord supérieur gauche arrondi */
+  border-bottom-left-radius: 32px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slide 8s infinite; /* Animation pour le défilement */
+  }
+  
+  .carousel-image {
+    width: 100%;
+    flex-shrink: 0; /* Empêche les images de rétrécir */
+  }
+  
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+  }
+  .card2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    margin: auto;
+    width: 200px;
+    height: 264px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, rgba(255, 239, 178, 1) 0%, rgb(172, 152, 73) 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card2::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, rgba(255, 239, 178, 1) 0%, rgb(172, 152, 73) 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+  }
+  
+  .heading {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+  
+  .card2 p:not(.heading) {
+    font-size: 14px;
+  }
+  
+  .card2 p:last-child {
+    color: rgba(255, 239, 178, 1);
+    font-weight: 600;
+  }
+  
+  .card2:hover::after {
+    filter: blur(30px);
+  }
+  
+  .card2:hover::before {
+    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+  }
+  
+  
+
+
+/* From Uiverse.io by Centered101 */ 
+
+  .cont {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 0px;
+    
+  }
+  
+  .card {
+    width: 500px;
+    height: 500px;
+    background-color:  rgba(0, 0, 0, 0.8);
+    border-top-right-radius: 32px; /* Bord supérieur gauche arrondi */
+  border-bottom-right-radius: 32px;
+    padding: 3px;
+    position: relative;
+    box-shadow: #604b4a30 0px 70px 30px -50px;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden; /* Assure que l'image ne dépasse pas de la carte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 32px; /* Assure que l'image suive la forme arrondie de la carte */
+    object-fit: contain; /* Assure que l'image est contenue à l'intérieur de la carte sans être déformée */
+  }
+  
+  
+  .card .mail {
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    background: transparent;
+    border: none;
+  }
+  
+  .card .mail svg {
+    stroke: rgba(255, 239, 178, 1);
+    stroke-width: 3px;
+  }
+  
+  .card .mail svg:hover {
+    stroke: rgb(150, 131, 57);;
+  }
+  
+  .card .profile-pic {
+    object-fit: contain;
+    object-fit: cover; 
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    top: 3px;
+    left: 3px;
+    border-radius: 30px;
+    z-index: 1;
+    border: 0px solid rgba(255, 239, 178, 1);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+  }
+  
+  .card .profile-pic img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    -o-object-position: 0px 0px;
+    object-position: 0px 0px;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  .card .profile-pic svg {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 0px 0px;
+    object-position: 0px 0px;
+    transform-origin: 45% 20%;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  .card .bottom {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    background: rgba(255, 239, 178, 1);
+    top: 80%;
+    border-radius: 29px;
+    z-index: 2;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  }
+  
+  .card .bottom .content {
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 160px;
+  }
+  
+  .card .bottom .content .name {
+    display: block;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .card .bottom .content .about-me {
+    display: block;
+    font-size: 0.9rem;
+    color: black;
+    margin-top: 1rem;
+  }
+  
+  .card .bottom .bottom-bottom {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card .bottom .bottom-bottom .social-links-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .card .bottom .bottom-bottom .social-links-container svg {
+    height: 20px;
+    fill: black;
+    filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
+  }
+  
+  .card .bottom .bottom-bottom .social-links-container svg:hover {
+    fill: rgb(150, 131, 57);
+    transform: scale(1.2);
+  }
+  
+  .card .bottom .bottom-bottom .button {
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9 rem;
+    padding: 0.4rem 0.6rem;
+    box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
+  }
+  
+  .card .bottom .bottom-bottom .button:hover {
+    background: rgb(150, 131, 57);
+    color: blacl;
+  }
+  
+  .card:hover {
+    border-top-left-radius: 2px;
+  }
+  
+  .card:hover .bottom {
+    top: 20%;
+    border-radius: 80px 29px 29px 29px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  }
+  
+  .card:hover .profile-pic {
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    z-index: 3;
+    border: 7px solid rgba(255, 239, 178, 1);
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+  }
+  
+  .card:hover .profile-pic:hover {
+    transform: scale(1.3);
+    border-radius: 0px;
+  }
+  
+ 
+  .card:hover .profile-pic svg {
+    transform: scale(2.5);
+    transition: all 0.5s ease-in-out 0.5s;
+  }
+  
+
+
+
+/* Styles généraux pour les smartphones */
+@media only screen and (max-width: 768px) {
+
+    /* Ajustement de la navigation */
+    header.main-header {
+       /* Empile le logo et les liens de navigation */
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 10px;
+    }
+
+    nav ul {
+        /* Les liens de navigation se placent verticalement */
+        align-items: center; /* Centrer les liens de navigation */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 8px 0; /* Espacement entre les liens de navigation */
+    }
+
+    /* Réduction de la taille du logo */
+    .logo img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    /* Réduction de la taille de l'image de la présentation */
+    .photo {
+        width: 100px;
+        height: 100px;
+        margin-left: 0;
+    }
+
+    /* Réorganisation de la section présentation */
+    .presentation {
+         /* Placer le texte au-dessus de l'image */
+        padding: 10px;
+    }
+
+    .text-content h1 {
+        font-size: 30px; /* Réduction de la taille du titre principal */
+    }
+
+    .text-content h5 {
+        font-size: 16px; /* Réduction de la taille des sous-titres */
+    }
+
+    footer{
+        height: auto;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center; /* center text for better alignment */
+    }
+
+    .social-link {
+        font-size: 48px; /* reduce size for smaller screens */
+    }
+
+    .social-link1 {
+        font-size: 18px; /* reduce size for smaller screens */
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-description {
+        padding: 10px;
+    }
+
+    .skill-description p {
+        font-size: 13px;
+    }
+    
+}
+
+
+

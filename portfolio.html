@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGNS_PORTFOLIO</title>
+    <link rel="stylesheet" href="styles3.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+        <div id="particles-js"></div>
+
+    <!-- Navbar initiale -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.jpg" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="MAGNS_DEV.html">Acceuil</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://github.com/maniangdieng" target="_blank" class="github-link"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Navbar fixe qui apparaît après défilement -->
+    <div class="fixed-navbar">
+       
+        <nav>
+            <ul>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="MAGNS_DEV.html">Acceuil</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://github.com/maniangdieng" target="_blank" class="github-link"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <section class="presentation">
+            <div class="text-content">
+                <h5>Decouvrez quelques un de mes réalisations </h5>
+                <h1>Maniang DIENG</h1>
+                <h5>Aspirant Dev FullStack</h5>
+                <h4>Voici mon portfolio </h4>
+            </div>
+            
+        </section> <br><br><br>
+      
+       
+    </main>
+
+    <section class="skills">
+        <div class="skills-container">
+            <hr>
+            <span>Projets réalisés</span>
+        </div>
+        <br> <br>
+    
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-image">
+                    <img src="img/l2i.png" alt="HTML">
+                </div>
+                <div class="skill-description">
+                    <span>SITE OFFICIEL L2I</span>
+                    <p class="desc">Ce projet est une proposition de site web pour ma filière la L2I ainsi qu epour le département Informatique de l'UASZ.</p>
+                    <button  id="continueButton"> </button>
+                    <button  class="view-more-btn" data-modal-target="#modal1">Voir plus</button>
+                   
+                    
+                </div>
+            </div>
+    
+            <div class="skill-item">
+                <div class="skill-image">
+                    <img src="img/maya.png" alt="CSS">
+                </div>
+                <div class="skill-description">
+                    <span>MAYA LOCATION</span>
+                    <p>Application web pour la gestion d'une agence de location de voitures réalisé avec les technologoes JEE.</p>
+                    <button  id="continueButton"> </button>
+                    <button  class="view-more-btn" data-modal-target="#modal2">Voir plus</button>
+                </div>
+            </div>
+    
+            <div class="skill-item">
+                <div class="skill-image">
+                    <img src="img/pythondjango.png" alt="Python">
+                </div>
+                <div class="skill-description">
+                    <span>APPRENNDRE PYTHON & DJANGO</span>
+                    <p>Site web réalisé avec Django pour la partie back-end permettant de s'initier au langage python.</p>
+                    <button  id="continueButton"> </button>
+                    <button  class="view-more-btn" data-modal-target="#modal3">Voir plus</button>
+                </div>
+            </div>
+    
+            <div class="skill-item">
+                <div class="skill-image">
+                    <img src="img/interface.png" alt="Javascript">
+                </div>
+                <div class="skill-description">
+                    <span>SENASSUR</span>
+                    <p>Application d'une compagnie d'assurance réalisé en POO avec JAVA.</p>
+                    <button  id="continueButton"> </button>
+                    <button  class="view-more-btn" data-modal-target="#modal4">Voir plus</button>
+                </div>
+            </div>
+    
+            <div class="skill-item">
+                <div class="skill-image">
+                    <img src="img/l2i.jpg" alt="Java">
+                </div>
+                <div class="skill-description">
+                    <span>L2I CONNECT</span>
+                    <p>Application mobile dédiée aux étudiants de la L2I.</p>
+                    <button  id="continueButton"> </button>
+                    <button  class="view-more-btn" data-modal-target="#modal5">Voir plus</button>
+                </div>
+            </div>
+    
+            <div class="skill-item">
+                <div class="skill-image">
+                    <img src="img/kk.jpg" alt="SQL">
+                </div>
+                <div class="skill-description">
+                    <span>UASZ</span>
+                    <p>Application mobile de visualisation d'emploi du temps .</p>
+                    <button  id="continueButton"> </button>
+                    <button  class="view-more-btn" data-modal-target="#modal6">Voir plus</button>
+                </div>
+            </div>
+    
+           
+    
+        </div>
+        <!-- Fenêtre modale -->
+        <div class="modal" id="modal1">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-media">
+                    <!-- Section pour la vidéo ou les images -->
+                    <video controls>
+                        <source src="img/prel2i.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <!-- Ou pour une image -->
+                    <!-- <img src="path/to/your/image.jpg" alt="Image description"> -->
+                </div>
+                <div class="modal-description">
+                    <!-- Section pour la description -->
+                    
+                    <p>Ce projet est un site web pour notre filière la L2I . Il a éte developpé en HTML,CSS et Javascript .</p>
+                </div>
+            </div>
+        </div>  
+
+
+        <div class="modal" id="modal2">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-media">
+                    <!-- Section pour la vidéo ou les images -->
+                    <video controls>
+                        <source src="img/ma.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <!-- Ou pour une image -->
+                    <!-- <img src="path/to/your/image.jpg" alt="Image description"> -->
+                </div>
+                <div class="modal-description">
+                    <!-- Section pour la description -->
+                    
+                    <p>Ce projet est une application web de gestion d'ne agence de location de voiture.Cette application a été développée avec les technologies JEE et deployée sur un serveur TOMCAT tout en interagissant avec une base de donnée et des DAO.</p>
+                </div>
+            </div>
+        </div> 
+
+
+        <div class="modal" id="modal3">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-media">
+                    <!-- Section pour la vidéo ou les images -->
+                    <video controls>
+                        <source src="img/dj.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <!-- Ou pour une image -->
+                    <!-- <img src="path/to/your/image.jpg" alt="Image description"> -->
+                </div>
+                <div class="modal-description">
+                    <!-- Section pour la description -->
+                    
+                    <p>Ce projet est un site web permettant d'apprendre le langage python ainsi que son framework DJANGO. Tous le contenu de ce site a été généré depuis la page admin DJANGO donc c'est un site fortement back-end .</p>
+                </div>
+            </div>
+        </div> 
+
+
+
+        
+        <div class="modal" id="modal4">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-media">
+                    <!-- Section pour la vidéo ou les images -->
+                    <video controls>
+                        <source src="img/ass.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <!-- Ou pour une image -->
+                    <!-- <img src="path/to/your/image.jpg" alt="Image description"> -->
+                </div>
+                <div class="modal-description">
+                    <!-- Section pour la description -->
+                    
+                    <p>Ce projet est une application avec une interface graphique de la bibioltheque Swing et qui permet de gerer une compagnie d'assurance tout en interagissant avec une base de donnée SQL .</p>
+                </div>
+            </div>
+        </div> 
+
+        <div class="modal" id="modal5">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-media">
+                    <!-- Section pour la vidéo ou les images -->
+                    <video controls>
+                        <source src="img/connect.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <!-- Ou pour une image -->
+                    <!-- <img src="path/to/your/image.jpg" alt="Image description"> -->
+                </div>
+                <div class="modal-description">
+                    <!-- Section pour la description -->
+                    
+                    <p> (Pour des soucis d'ergonomie veillez mettre la video en pliein écran). <br> projet est une application mobile android dédiée aux étudiants de la L2I. Cette application permet aux étudiants de s"entreaider avec un systeme de tutorat, uun forum pour échanger des messages sur les enseignements mais elle contient aussi tous les cours dispensés lors de la formation</p>
+                </div>
+            </div>
+        </div> 
+
+        <div class="modal" id="modal6">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-media">
+                    <!-- Section pour la vidéo ou les images -->
+                    <video controls>
+                        <source src="img/uasz.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <!-- Ou pour une image -->
+                    <!-- <img src="path/to/your/image.jpg" alt="Image description"> -->
+                </div>
+                <div class="modal-description">
+                    <!-- Section pour la description -->
+                    
+                    <p>(Pour des soucis d'ergonomie veillez mettre la video en pliein écran). <br> Cette application mobile est un projet tutoré permettant d'afficher les emploies du temps d'une classe en récuperant les infos de l'emploi du temps depuis une API</p>
+                </div>
+            </div>
+        </div> 
+
+
+    </section><br><br>
+ 
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="signup">
+             
+                
+                
+                 <p style="font-family: cursive; margin-top: 35px;font-size: 20px;color: white;">© 2024 Maniang DIENG </p>
+                
+                
+            </div>
+            <div class="logo">
+                <span style="margin-top: 30px; margin-left: 70px;"> <img class="logo" src="img/logo.jpg" style="border-radius: 50%;" height="150" width="150"  alt="logo dmf" id="logo" />   </span> 
+               </div>
+            <div class="social-media">
+                
+                <a href="https://www.facebook.com/maniang.dieng.566?mibextid=LQQJ4d" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/uas_ziguinchor?s=11" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/magns_01?igsh=MW0waGxqaXdweHE5bA%3D%3D&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/maniang-dieng-3a5aa22a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="tel:+221781356105" class="social-link"><i class="fas fa-phone"></i> </a>
+                <a href="m.d289@zig.univ.sn" class="social-link"><i class="fas fa-envelope"></i></a>
+
+               
+            </div>
+           
+            
+        </div>
+    </footer>
+
+    
+</body>
+
+</html>

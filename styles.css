@@ -219,34 +219,88 @@ p {
     margin: 0 0 1em 0; /* Espace en bas pour éviter que les paragraphes ne soient trop collés */
     padding: 0; /* Pas de padding pour éviter des espaces non désirés */
 }
+/* From Uiverse.io by alexroumi */ 
 button {
-    font-family: Arial, sans-serif; /* Police claire et facile à lire */
-    font-size: 16px; /* Taille de police lisible */
-    font-weight: bold; /* Texte en gras pour plus de visibilité */
-    color: #fff; /* Texte blanc pour un bon contraste */
-    background-color: black; /* Couleur de fond noire */
-    border: none; /* Retirer les bordures par défaut du bouton */
-    border-radius: 28px; /* Coins arrondis pour un look moderne */
-    padding: 10px 20px; /* Espacement interne pour un bouton confortable */
-    cursor: pointer; /* Change le curseur en main lorsqu'on survole le bouton */
-    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Effets de transition pour une interaction fluide */
-    outline: none; /* Retirer le contour de focus par défaut */
-    height: 50px;
-    width: 150px;
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 20;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   button:hover {
+    color: #e8e8e8;
+   }
+   
+   button:hover::before {
+    width: 100%;
+   }
+
+
+   footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    position: relative; /* ou "absolute" selon vos besoins */
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    height: 208px;
 }
 
-button:hover {
-    background-color: white; /* Couleur de fond blanche au survol */
-    color: black; /* Couleur du texte noire au survol pour contraste avec le fond blanc */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-button:active {
-    transform: scale(0.98); /* Réduit légèrement la taille du bouton lorsqu'il est cliqué pour un effet de pression */
+.social-media {
+    display: flex;
+    gap: 10px;
+    
 }
 
-button:focus {
-    box-shadow: 0 0 0 3px rgba(39, 40, 41, 0.5); /* Ajouter une ombre autour du bouton lors du focus pour l'accessibilité */
+.social-link {
+    color: white;
+    font-size: 64px;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-top: 40px;
 }
+.social-link1 {
+    color: white;
+    font-size: 20spx;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+
 /* Styles généraux pour les smartphones */
 @media only screen and (max-width: 768px) {
 
@@ -274,6 +328,7 @@ button:focus {
         width: 60px;
         height: 60px;
         margin-bottom: 10px;
+       
     }
 
     /* Réduction de la taille de l'image de la présentation */
@@ -301,7 +356,7 @@ button:focus {
     .circle-arrow {
         width: 60px;
         height: 60px;
-        margin-top: 20px; /* Espacement supplémentaire */
+        margin-top: 90px; /* Espacement supplémentaire */
     }
 
     .arrow-down {
@@ -321,5 +376,20 @@ button:focus {
         width: 100%; /* Le bouton prend toute la largeur disponible */
         font-size: 14px; /* Réduction de la taille du texte */
         padding: 8px 15px; /* Ajustement du padding */
+    }
+    footer{
+        height: auto;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center; /* center text for better alignment */
+    }
+
+    .social-link {
+        font-size: 48px; /* reduce size for smaller screens */
+    }
+
+    .social-link1 {
+        font-size: 18px; /* reduce size for smaller screens */
     }
 }
