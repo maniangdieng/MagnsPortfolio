@@ -347,8 +347,8 @@ button {
 
     /* Réduction de la taille de l'image de la présentation */
     .photo {
-        width: 100px;
-        height: 100px;
+        width: 300px;
+        height: 300px;
         margin-left: 0;
     }
 
@@ -356,7 +356,7 @@ button {
     .presentation {
         display: flex;
         flex-direction: column; 
-         /* Placer le texte au-dessus de l'image */
+       
         padding: 10px;
     }
 
