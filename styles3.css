@@ -421,6 +421,7 @@ button {
 .modal-media video {
     width: 100%; /* Assurez-vous que la vidéo prend toute la largeur disponible */
     border-radius: 10px;
+    height: 300px;
 }
 
 /* Style pour la description */

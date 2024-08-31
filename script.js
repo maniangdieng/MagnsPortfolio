@@ -128,7 +128,9 @@ document.getElementById('continueButton').addEventListener('click', function() {
     window.location.href = 'about.html';
 });
 
-
+document.getElementById('cv').addEventListener('click', function() {
+    window.open('img/magns.pdf', '_blank');
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -172,4 +174,25 @@ document.addEventListener("DOMContentLoaded", function () {
     iframe.src = "form.html";
     iframe.style.display = "block"; // Affiche l'iframe lorsque le bouton est cliqué
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.appear');
+
+    function checkVisibility() {
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', checkVisibility);
+
+    // Vérifiez initialement si les éléments sont visibles
+    checkVisibility();
+});
 

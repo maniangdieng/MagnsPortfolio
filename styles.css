@@ -300,6 +300,20 @@ button {
     margin-top: 40px;
 }
 
+/* Styles pour les éléments avant l'apparition */
+.appear {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Styles pour les éléments une fois qu'ils sont visibles */
+.appear.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 /* Styles généraux pour les smartphones */
 @media only screen and (max-width: 768px) {
@@ -340,6 +354,8 @@ button {
 
     /* Réorganisation de la section présentation */
     .presentation {
+        display: flex;
+        flex-direction: column; 
          /* Placer le texte au-dessus de l'image */
         padding: 10px;
     }
